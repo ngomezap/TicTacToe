@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player" id="container">
+        <div id="player1">
+            <h1 class="name">Player 1</h1>
+            <div class="points">0</div>
+        </div>
+        <div id="gameboard">
+            <div class="row">
+                <div class="cell col1" data-x="1" data-y="1"></div>
+                <div class="cell col2" data-x="2" data-y="1"></div>
+                <div class="cell col3" data-x="3" data-y="1"></div>
+            </div>
+            <div class="row">
+                <div class="cell col1" data-x="1" data-y="2"></div>
+                <div class="cell col2" data-x="2" data-y="2"></div>
+                <div class="cell col3" data-x="3" data-y="2"></div>
+            </div>
+            <div class="row">
+                <div class="cell col1" data-x="1" data-y="3"></div>
+                <div class="cell col2" data-x="2" data-y="3"></div>
+                <div class="cell col3" data-x="3" data-y="3"></div>
+            </div>
+        </div>
+        <div class="player" id="player2">
+            <h1 class="name">Player 2</h1>
+            <div class="points">0</div>
+        </div>
+    </div>
+    <div id="replay">
+        <button class="shadow" id="playAgain">Play Again</button>
+    </div>
+</body>
+</html>

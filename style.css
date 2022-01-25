@@ -1,0 +1,65 @@
+@font-face {
+    font-family: mochi;
+    src: url("./fonts/MochiyPopPOne-Regular.ttf");
+}
+
+*{
+    font-family: mochi, Arial, Helvetica, sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    height: 90%;
+    background: linear-gradient(to bottom, #80ccc8, #26658a);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 60px
+}
+
+.points{
+    font-size: 70px;
+    text-align: center;
+}
+
+.row{
+    display:flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cell{
+    background-color: white;
+    box-shadow: 5px 5px 5px black;;
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border: 1px black solid;
+    text-align: center;
+}
+
+#replay{
+    margin-top: 40px;
+    text-align: center;
+}
+
+#playAgain{
+    border: none;
+    background: none;
+    font-size: 40px;
+}
+
+.shadow{
+    text-shadow: 5px 5px 5px rgb(61, 58, 58);
+    padding-left: 10px;
+}
