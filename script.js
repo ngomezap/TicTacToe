@@ -23,8 +23,13 @@ const Gameboard = (() => {
     //Place player choice on gameboard
     const makePlay = function(player, x, y){
         gameboard[y - 1][x - 1] = player.symbol;
-        console.log(gameboard);
-        console.log(player.name)
+        if(player === controlCenter.p1){
+            score1.classList.remove('yourTurn');
+            score2.classList.add('yourTurn');
+        }else{
+            score2.classList.remove('yourTurn');
+            score1.classList.add('yourTurn');
+        }
     }
 
     return {makePlay, gameboard, initialState, blocked};
@@ -44,6 +49,8 @@ controlCenter = (() => {
         if(p === p1){
             return p2;
         }else{
+            score2.classList.remove('yourTurn');
+            score1.classList.add('yourTurn');
             return p1;
         }
     }
@@ -80,12 +87,22 @@ controlCenter = (() => {
                 displayResult();
             }
         }
+
+        //Check draw
+        for(let i = 0; i < board.length; i++){
+            for(let j = 0; j < board[i].length; j++){
+                if(board[i][j] === ""){
+                    return;
+                }
+            }
+        }
+
+        alert("It's a draw");
+        Gameboard.initialState();
+        Gameboard.blocked = 1;
     }
 
     function displayResult(){
-        /*const result = document.createElement('div');
-        result.innerText = `The winner is ${p.name}`;
-        container.appendChild(result);*/
         //Set gameboard array to initial state
         Gameboard.initialState();
         Gameboard.blocked = 1;
@@ -124,7 +141,6 @@ controlCenter = (() => {
             return;
         }
     }
-
     return {addToGameboard, p1, p2, clear}
 })();
 
@@ -150,6 +166,15 @@ const playAgain = document.getElementById('playAgain');
 playAgain.addEventListener('click', controlCenter.clear);
 playAgain.addEventListener('mousedown', function(e){e.target.classList.remove("shadow")});
 playAgain.addEventListener('mouseup', function(e){e.target.classList.add("shadow")});
+
+//Get the scorer
+
+const score1 = document.getElementById("player1");
+const score2 = document.getElementById("player2");
+
+
+//Add color to player1
+score1.classList.add('yourTurn');
 
 alert("Let's play Tic-Tac-Toe!");
 controlCenter.p1.name = prompt("PLAYER 1:");

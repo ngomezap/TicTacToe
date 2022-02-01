@@ -63,3 +63,7 @@ body{
     text-shadow: 5px 5px 5px rgb(61, 58, 58);
     padding-left: 10px;
 }
+
+.yourTurn{
+    color: green;
+}
